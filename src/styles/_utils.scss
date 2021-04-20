@@ -1,3 +1,5 @@
+@import 'fonts';
+
 // utilities
 $colorPrimary: rgba(203, 0, 222, 0.961);
 $colorSecondary: rgba(83, 0, 91, 0.961);
@@ -33,6 +35,15 @@ body {
 
 .block__border-graylight {
     border: 1px solid lightgray;
+}
+
+.border-1{
+    border: 0.5px dashed $darkColorPrimary;
+}
+
+h2, span, a {
+    font-family: $caviarDreamBold;
+    color: $colorPrimary;
 }
 
 // start modifiers for borders
