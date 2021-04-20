@@ -1,0 +1,310 @@
+@font-face {
+  font-family: 'CaviarDream';
+  src: url(../assets/fonts/caviar_dreams/CaviarDreams.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'CaviarDreamBold';
+  src: url(../assets/fonts/caviar_dreams/CaviarDreams_Bold.woff) format("woff");
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: CaviarDream;
+}
+
+.block__border-dashed {
+  border: 2px solid rebeccapurple;
+  border-style: dashed;
+}
+
+.block__border-hide {
+  border: 0px;
+}
+
+.block__border-show {
+  border: 2px;
+}
+
+.block__border-graylight {
+  border: 1px solid lightgray;
+}
+
+*[border-dashed="true"] {
+  border: 2px solid rgba(203, 0, 222, 0.961);
+}
+
+*[border-dashed="true"]--dashed {
+  border: 2px solid rgba(203, 0, 222, 0.961);
+  border-style: dashed;
+}
+
+.nav-header__dropdown-right {
+  right: 0px;
+  left: auto;
+}
+
+#header,
+.header {
+  height: 60px;
+}
+
+#header--dashed,
+.header--dashed {
+  border: 2px solid rgba(203, 0, 222, 0.961);
+  border-style: dashed;
+}
+
+#header--center,
+.header--center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#header--dark,
+.header--dark {
+  background-color: rgba(83, 0, 91, 0.961);
+  color: white;
+}
+
+#content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+}
+
+.main-content {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#sidebar,
+.sidebar {
+  height: 100%;
+  width: 80px;
+  min-width: 80px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  overflow: hidden;
+  position: relative;
+}
+
+#sidebar--dashed,
+.sidebar--dashed {
+  border: 2px solid rgba(203, 0, 222, 0.961);
+  border-style: dashed;
+}
+
+#sidebar ul li a,
+.sidebar ul li a {
+  text-align: left;
+  width: 80px;
+  min-width: 80px;
+}
+
+#sidebar ul li a i.arrow-toggle,
+.sidebar ul li a i.arrow-toggle {
+  display: block;
+  position: relative;
+  left: 50%;
+  overflow: hidden;
+}
+
+#sidebar .collapser,
+.sidebar .collapser {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  position: absolute;
+  bottom: 1rem;
+}
+
+#sidebar .collapser--dashed,
+.sidebar .collapser--dashed {
+  border: 2px solid rgba(203, 0, 222, 0.961);
+  border-style: dashed;
+}
+
+#sidebar .collapser__button,
+.sidebar .collapser__button {
+  margin: 0px auto;
+}
+
+#sidebar.active,
+.sidebar.active {
+  width: 0px;
+  min-width: 0px;
+}
+
+#body-content,
+.body-content {
+  position: relative;
+  width: calc(100% - 80px);
+  min-width: calc(100% - 80px);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#body-content--dashed,
+.body-content--dashed {
+  border: 2px solid rgba(203, 0, 222, 0.961);
+  border-style: dashed;
+}
+
+#body-content--center,
+.body-content--center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#body-content #btn-sidebar-toogle,
+.body-content #btn-sidebar-toogle {
+  display: block;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+#body-content.active,
+.body-content.active {
+  width: 100%;
+}
+
+footer,
+.footer {
+  height: 60px;
+}
+
+footer--dashed,
+.footer--dashed {
+  border: 2px solid rgba(203, 0, 222, 0.961);
+  border-style: dashed;
+}
+
+footer--center,
+.footer--center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (min-width: 992px) {
+  #sidebar,
+  .sidebar {
+    height: 100%;
+    width: 200px;
+    min-width: 200px;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  #sidebar ul li a,
+  .sidebar ul li a {
+    width: 100%;
+  }
+  #sidebar ul li a i.arrow-toggle,
+  .sidebar ul li a i.arrow-toggle {
+    position: relative;
+    display: inline;
+    right: 10px;
+  }
+  #sidebar.active,
+  .sidebar.active {
+    width: 80px;
+    min-width: 80px;
+  }
+  #sidebar.active ul li a,
+  .sidebar.active ul li a {
+    width: 80px;
+    min-width: 80px;
+  }
+  #sidebar.active ul li a i.arrow-toggle,
+  .sidebar.active ul li a i.arrow-toggle {
+    display: block;
+    position: relative;
+    left: 50%;
+    overflow: hidden;
+  }
+  #body-content,
+  .body-content {
+    position: relative;
+    width: calc(100% - 200px);
+    min-width: calc(100% - 200px);
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  #body-content--dark,
+  .body-content--dark {
+    background-color: rgba(83, 0, 91, 0.961);
+    color: white;
+  }
+  #body-content--dashed,
+  .body-content--dashed {
+    border: 2px solid rgba(203, 0, 222, 0.961);
+    border-style: dashed;
+  }
+  #body-content--center,
+  .body-content--center {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #body-content #btn-sidebar-toogle,
+  .body-content #btn-sidebar-toogle {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+  #body-content.active,
+  .body-content.active {
+    width: calc(100% - 80px);
+    min-width: calc(100% - 80px);
+  }
+}
+/*# sourceMappingURL=dashboard_theme.css.map */

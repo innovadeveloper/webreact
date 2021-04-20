@@ -1,0 +1,10 @@
+{
+    "files.exclude": {
+        // "**/*.js": true,
+        "**/*.map": true,
+        // "**/*.css": true,
+        "**/styles/*.css": true,
+    },
+    "debug.javascript.warnOnLongPrediction": false,
+    "liveServer.settings.port": 5501
+}

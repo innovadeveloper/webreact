@@ -1,0 +1,137 @@
+@import 'fonts';
+@import 'variables';
+@import 'utils';
+$fontDescriptionColor: black;
+$fontTitleColor: red;
+$colorPrimary : rgba(203, 0, 222, 0.961);
+$darkColorPrimary : rgba(83, 0, 91, 0.961);
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    font-size: 16px;
+    font-family: $caviarDream;
+    // background-color: aqua
+}
+
+header {
+    // @include content-center();
+    height: 60px;
+}
+
+.section-text_title {
+    font-size: 2rem;
+    font-family: $caviarDreamBold;
+}
+
+.section-text_sub-title {
+    font-size: 1.3rem;
+    font-family: $caviarDreamBold;
+}
+
+.section-text_sub-title-two {
+    font-size: 1rem;
+    font-family: $caviarDreamBold;
+}
+// .main-content__structure {
+//     // display: flex;
+//     // flex-direction: column;
+//     // height: 100vh;
+//     // background-color: yellow;
+// }
+
+.main-content__body-section {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#main-content__sidebar {
+    @include content-center();
+    // height: 100%;
+    height: 60px;
+    width: 100%;
+    #btn-sidebar-collapser {
+        display: none;
+    }
+}
+
+#main-content__article {
+    // @include content-center();
+    width: 100%;
+    height: 100%;
+    // #btn-sidebar-toogle {
+    //     display: none;
+    // }
+}
+
+footer {
+    @include content-center();
+    height: 60px;
+}
+
+.section__subtitle-line{
+    width: 5rem;
+    border: 1px solid $darkColorPrimary;
+    margin: 10px 0px;
+}
+
+// override
+
+.bg-primary{
+    // color: $colorPrimary;
+    background-color: $colorPrimary !important;
+}
+
+// #btn-sidebar-collapser{
+//     position: absolute;
+//     top: 1rem;
+//     right: 1rem;
+// }
+// first mobile
+@media only screen and (min-width: $phoneSize) {
+    body {
+        // background-color: lightblue;
+    }
+    // .flex-container {
+    //     flex-direction: column;
+    // }
+}
+
+@media only screen and (min-width: $tabletSize) {
+    body {
+        // background-color: yellow;
+    }
+
+    img.header-content__picture {
+        position: absolute;
+        top: 15%;
+        height: 70%;
+        background-repeat: no-repeat;
+        object-fit: cover;
+    }
+}
+
+@media only screen and (min-width: $desktopSize) {
+    body {
+        // background-color: rgb(106, 103, 255);
+    }
+    .main-content__body-section {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: row;
+    }
+    #main-content__article {
+        width: 100%;
+    }
+    img.header-content__picture {
+        height: 90%;
+        top: 0;
+    }
+
+}

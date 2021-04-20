@@ -1,0 +1,189 @@
+@import 'fonts';
+@import 'variables';
+@import 'utils';
+$fontDescriptionColor: black;
+$fontDescriptionDarkColor: rgb(255, 255, 255);
+
+// @include themes--colors();
+// *[class*="--green"]{
+//     background-color: $darkColorPrimary;
+//     color: $fontDescriptionDarkColor
+// }
+
+
+#header,
+.header {
+    @include border-dashed();
+    @include content-center();
+    @include dark-theme();
+    // styles for .block
+    height: 60px;
+    // &__title {
+    //     // styles for .block__element
+    //     &--center {
+    //         // styles for .block__element--modifier
+    //     }
+    //     &--left {
+    //         // styles for .block__element--modifier
+    //     }
+    //     &--right {
+    //         // styles for .block__element--modifier
+    //     }
+    // }
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+// sidebar and article content
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+// variables navbar
+$sideBarCollapsedWidth: 80px;
+$sideBarOpenedWidth: 200px;
+#sidebar,
+.sidebar {
+    @include border-dashed();
+    // @include content-center();
+    height: 100%;
+    width: $sideBarCollapsedWidth;
+    min-width: $sideBarCollapsedWidth;
+    transition: all 0.3s;
+    overflow: hidden;
+    position: relative;
+    & ul li a {
+        text-align: left;
+        // width: 100%;
+        width: $sideBarCollapsedWidth;
+        min-width: $sideBarCollapsedWidth;
+        i.arrow-toggle {
+            display: block;
+            position: relative;
+            left: 50%;
+            overflow: hidden
+        }
+    }
+    .collapser {
+        @include border-dashed();
+        display: flex; // ¿? flex align in the center by default..
+        width: 100%;
+        position: absolute;
+        bottom: 1rem;
+        &__button {
+            margin: 0px auto;
+        }
+    }
+    &.active {
+        width: 0px;
+        min-width: 0px;
+    }
+}
+
+#body-content,
+.body-content {
+    @include border-dashed();
+    @include content-center();
+    position: relative;
+    width: calc(100% - #{$sideBarCollapsedWidth});
+    min-width: calc(100% - #{$sideBarCollapsedWidth});
+    transition: all 0.3s;
+    #btn-sidebar-toogle {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+    }
+    &.active {
+        width: 100%;
+    }
+}
+
+footer,
+.footer {
+    @include border-dashed();
+    @include content-center();
+    height: 60px;
+}
+
+// first mobile
+@media only screen and (min-width: $phoneSize) {
+    body {
+        // background-color: lightblue;
+    }
+    // .flex-container {
+    //     flex-direction: column;
+    // }
+}
+
+@media only screen and (min-width: $tabletSize) {
+    body {
+        // background-color: yellow;
+    }
+}
+
+// width: calc(100% - #{$sidebarWidth});
+@media only screen and (min-width: $desktopSize) {
+    body {
+        // background-color: rgb(106, 103, 255);
+    }
+    // sidebar and article content
+    #sidebar,
+    .sidebar {
+        // @include content-center();
+        height: 100%;
+        width: $sideBarOpenedWidth;
+        min-width: $sideBarOpenedWidth;
+        position: relative;
+        transition: all 0.3s;
+        & ul li a {
+            width: 100%;
+            i.arrow-toggle {
+                position: relative;
+                display: inline;
+                right: 10px;
+            }
+        }
+        &.active {
+            & ul li a {
+                width: $sideBarCollapsedWidth;
+                min-width: $sideBarCollapsedWidth;
+                i.arrow-toggle {
+                    display: block;
+                    position: relative;
+                    left: 50%;
+                    overflow: hidden
+                }
+            }
+            width: $sideBarCollapsedWidth;
+            min-width: $sideBarCollapsedWidth;
+        }
+    }
+
+    #body-content,
+    .body-content {
+        @include dark-theme();
+        @include border-dashed();
+        @include content-center();
+        position: relative;
+        width: calc(100% - #{$sideBarOpenedWidth});
+        min-width: calc(100% - #{$sideBarOpenedWidth});
+        transition: all 0.3s;
+        #btn-sidebar-toogle {
+            display: block;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+        }
+        &.active {
+            width: calc(100% - #{$sideBarCollapsedWidth});
+            min-width: calc(100% - #{$sideBarCollapsedWidth});
+        }
+    }
+}
