@@ -35,6 +35,24 @@ $borde_radius_cardview: 5px;
         object-fit: cover;
     }
 
+    &__form{
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        &--small{
+            padding: 0 5%;
+        }
+    }
+
+    &__skip{
+        margin-top: 1rem;
+        text-decoration: none;
+        float: right;
+        font-size: 0.8rem;
+        // color: blue;
+    }
 }
 
 // first mobile
