@@ -1,0 +1,118 @@
+@import 'fonts';
+@import 'variables';
+@import 'utils';
+$fontDescriptionColor: black;
+$fontTitleColor: red;
+$borde_radius_cardview: 5px;
+// .character__picture{
+//     // width: 8rem;
+//     // height: 8rem;
+// }
+.character {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    &--dark {
+        background-color: darkblue;
+    }
+    &__cardview {
+        padding: 0.5rem;
+        padding-left: 8rem;
+        width: 30rem;
+        height: 15rem;
+        border-radius: $borde_radius_cardview;
+    }
+    &__avatar {
+        float: left;
+        margin-left: -8rem;
+        width: 8rem;
+        height: 8rem;
+        // overflow: hidden;
+        
+    }
+    &__picture {
+        width: 100%;
+        height: 8rem;
+
+    }
+
+    &__content {
+        margin-left: 0.5rem;
+        // overflow: hidden;
+    }
+    &__stats {
+        clear: both;
+        overflow: hidden;
+        i {
+            // display: block;
+            height: 1rem;
+            float: left;
+            color: red;
+        }
+        .progress{
+            margin-left: 1.4rem;
+            margin-top: 0.25rem;
+            height: 0.5rem;
+
+        }
+    }
+    // &__stats-progress {
+    //     height: 1rem;
+    //     // display: flex;
+    //     // justify-content: center;
+    //     // overflow: hidden;
+    // }
+
+    // &__stats-icon {
+    //     float: left;
+    //     // overflow: hidden;
+    // }
+    // //  complementos...
+   
+    // &__form {
+    //     width: 50%;
+    //     height: 100%;
+    //     overflow: hidden;
+    //     display: flex;
+    //     align-items: center;
+    //     &--small {
+    //         padding: 0 5%;
+    //     }
+    // }
+    // &__skip {
+    //     margin-top: 1rem;
+    //     text-decoration: none;
+    //     float: right;
+    //     font-size: 0.8rem;
+    //     // color: blue;
+    // }
+}
+
+// first mobile
+@media only screen and (min-width: $phoneSize) {
+    // body {
+    //     background-color: lightblue;
+    // }
+    // .flex-container {
+    //     flex-direction: column;
+    // }
+}
+
+@media only screen and (min-width: $tabletSize) {
+    // body {
+    //     background-color: yellow;
+    // }
+}
+
+@media only screen and (min-width: $desktopSize) {
+    // body {
+    //     background-color: rgb(106, 103, 255);
+    // }
+    .flex-container {
+        flex-direction: row;
+    }
+    .flex-item {
+        padding: 10px;
+    }
+}
